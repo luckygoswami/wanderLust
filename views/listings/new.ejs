@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WanderLust</title>
+    </head>
+    <body>
+        <h3>create a New listing</h3>
+        <form method="POST" action="/listings">
+            <input name="listing[title]" type="text" placeholder="enter title" /><br /><br />
+            <input name="listing[description]" type="text" placeholder="enter description" /><br /><br />
+            <input name="listing[price]" type="number" placeholder="enter price" /><br /><br />
+            <input name="listing[location]" type="text" placeholder="enter location" /><br /><br />
+            <input name="listing[country]" type="text" placeholder="enter country" /><br /><br />
+            <button>create listing</button>
+        </form>
+    </body>
+</html>
