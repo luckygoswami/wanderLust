@@ -14,5 +14,6 @@
             <li><%= listing.location %></li>
             <li><%= listing.country %></li>
         </ul>
+        <form action="/listings/<%= listing.id %>/edit?_method=PUT" method="post"><button>edit</button></form>
     </body>
 </html>
