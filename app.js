@@ -67,10 +67,17 @@ app.post("/listings", async (req, res) => {
 });
 
 //Edit route
-app.put("/listings/:id/edit", async (req, res) => {
+app.get("/listings/:id/edit", async (req, res) => {
     let { id } = req.params;
     const listing = await Listing.findById(id);
     res.render("listings/edit.ejs", { listing });
+});
+
+//Update route
+app.put("/listings/:id", async (req, res) => {
+    let { id } = req.params;
+    await Listing.findByIdAndUpdate(id, { ...req.body.listing });
+    res.redirect("/listings");
 });
 
 app.listen(8080, () => {
