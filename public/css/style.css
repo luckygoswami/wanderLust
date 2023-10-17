@@ -91,3 +91,9 @@ body {
     opacity: 0.2;
     background-color: white;
 }
+
+/* New page */
+.add-btn {
+    background-color: #fe424d;
+    border: none;
+}
