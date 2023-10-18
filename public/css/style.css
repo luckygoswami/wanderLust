@@ -103,3 +103,8 @@ body {
     background-color: #fe424d;
     border: none;
 }
+
+/* Show page */
+.btns {
+    display: flex;
+}
