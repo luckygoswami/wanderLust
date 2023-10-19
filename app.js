@@ -7,6 +7,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
+const { listingSchema } = require("./schema.js");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -46,6 +47,16 @@ app.get("/", (req, res) => {
 //     res.send("successful");
 // });
 
+const validateListing = (req, res, next) => {
+    let { error } = listingSchema.validate(req.body);
+    if (error) {
+        let errMsg = error.details.map((el) => el.message).join(",");
+        throw new ExpressError(400, error);
+    } else {
+        next();
+    }
+};
+
 // Index route
 app.get(
     "/listings",
@@ -73,6 +84,7 @@ app.get(
 // Create route
 app.post(
     "/listings",
+    validateListing,
     wrapAsync(async (req, res) => {
         const newListing = new Listing(req.body.listing);
         await newListing.save();
@@ -93,6 +105,7 @@ app.get(
 //Update route
 app.put(
     "/listings/:id",
+    validateListing,
     wrapAsync(async (req, res) => {
         let { id } = req.params;
         await Listing.findByIdAndUpdate(id, { ...req.body.listing });
