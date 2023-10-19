@@ -5,6 +5,8 @@ const Listing = require("./models/listing.js");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
+const wrapAsync = require("./utils/wrapAsync.js");
+const ExpressError = require("./utils/ExpressError.js");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -63,11 +65,14 @@ app.get("/listings/:id", async (req, res) => {
 });
 
 // Create route
-app.post("/listings", async (req, res) => {
-    const newListing = new Listing(req.body.listing);
-    await newListing.save();
-    res.redirect("/listings");
-});
+app.post(
+    "/listings",
+    wrapAsync(async (req, res) => {
+        const newListing = new Listing(req.body.listing);
+        await newListing.save();
+        res.redirect("/listings");
+    })
+);
 
 //Edit route
 app.get("/listings/:id/edit", async (req, res) => {
@@ -88,6 +93,15 @@ app.delete("/listings/:id", async (req, res) => {
     let { id } = req.params;
     await Listing.findByIdAndDelete(id);
     res.redirect("/listings");
+});
+
+app.all("*", (req, res, next) => {
+    next(new ExpressError(404, "Page Not Found!"));
+});
+
+app.use((err, req, res, next) => {
+    let { statusCode = 500, message = "oops! something went wrong." } = err;
+    res.status(statusCode).send(message);
 });
 
 app.listen(8080, () => {
