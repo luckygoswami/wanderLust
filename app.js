@@ -35,19 +35,6 @@ app.get("/", (req, res) => {
     res.send("root page");
 });
 
-// app.get("/testlisting", async (req, res) => {
-//     let sampleListing = new Listing({
-//         title: "my new villa",
-//         description: "by the beach",
-//         price: 500,
-//         location: "Goa",
-//         country: "India",
-//     });
-//     await sampleListing.save();
-//     console.log("sample saved");
-//     res.send("successful");
-// });
-
 const validateListing = (req, res, next) => {
     let { error } = listingSchema.validate(req.body);
     if (error) {
