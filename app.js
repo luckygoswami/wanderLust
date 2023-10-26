@@ -8,7 +8,7 @@ const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
 const { listingSchema } = require("./schema.js");
-const review = require("./models/review.js");
+const Review = require("./models/review.js");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -110,6 +110,16 @@ app.delete(
         res.redirect("/listings");
     })
 );
+
+//Review Route
+app.post("/listings/:id/reviews", async (req, res) => {
+    let listing = await Listing.findById(req.params.id);
+    let newReview = new Review(req.body.review);
+
+    Listing.reviews.push(newReview);
+    await newReview.save();
+    await Listing.save();
+});
 
 app.all("*", (req, res, next) => {
     next(new ExpressError(404, "Page Not Found!"));
