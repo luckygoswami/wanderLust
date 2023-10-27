@@ -121,7 +121,7 @@ app.delete(
     })
 );
 
-//Review Route
+//Review- Show Route
 app.post(
     "/listings/:id/reviews",
     validateReview,
@@ -136,7 +136,7 @@ app.post(
     })
 );
 
-//Delete Review Route
+//Review- Delete Route
 app.delete(
     "/listings/:id/reviews/:reviewId",
     wrapAsync(async (req, res) => {
