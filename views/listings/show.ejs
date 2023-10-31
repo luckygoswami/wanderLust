@@ -14,10 +14,12 @@
                 <p class="card-text"><%= listing.country %></p>
             </div>
         </div>
+        <% if (currUser && currUser._id.equals(listing.owner._id)) {%>
         <div class="btns">
             <a href="/listings/<%= listing.id %>/edit" class="btn btn-dark edit-btn offset-2">Edit</a>
             <form action="/listings/<%= listing.id %>?_method=delete" method="post"><button class="btn btn-dark offset-4">Delete</button></form>
         </div>
+        <% } %> <% if (currUser) {%>
         <div class="col-8 offset-2 mb-3">
             <hr />
             <h4>Leave a review</h4>
@@ -31,7 +33,7 @@
                     <textarea name="review[comment]" id="comment" cols="30" rows="5" class="form-control" required></textarea>
                     <div class="invalid-feedback">Please add some comments for review</div>
                 </div>
-                <button type="submit" class="btn btn-outline-dark">Submit</button>
+                <button class="btn btn-outline-dark">Submit</button>
             </form>
             <hr />
             <p><b>All Reviews</b></p>
@@ -39,7 +41,7 @@
                 <% for (let review of listing.reviews) { %>
                 <div class="card col-5 ms-3 mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Jane Doe</h5>
+                        <h5 class="card-title"><i>@<%= review.author.username %></i></h5>
                         <p class="card-text"><%= review.comment %></p>
                         <p class="card-text"><%= review.rating %> stars</p>
                     </div>
@@ -50,5 +52,6 @@
                 <% } %>
             </div>
         </div>
+        <% } %>
     </div>
 </body>
