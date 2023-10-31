@@ -7,13 +7,11 @@
         <div class="card listing-card col-8 offset-2">
             <img src="<%= listing.image %>" class="card-img-top alt="listing_image" />
             <div class="card-body">
-                <p class="card-text">
-                    <!-- <br /> -->
-                    <%= listing.description %> <br />
-                    &#8377; <%= listing.price.toLocaleString('en-IN') %>/night <br />
-                    <%= listing.location %> <br />
-                    <%= listing.country %>
-                </p>
+                <p class="card-text">Owned by<i><%= listing.owner.username %></i></p>
+                <p class="card-text"><%= listing.description %></p>
+                <p class="card-text">&#8377; <%= listing.price.toLocaleString('en-IN') %>/night</p>
+                <p class="card-text"><%= listing.location %></p>
+                <p class="card-text"><%= listing.country %></p>
             </div>
         </div>
         <div class="btns">
