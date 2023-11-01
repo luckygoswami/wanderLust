@@ -6,6 +6,8 @@ body {
 }
 
 .container {
+    /* margin-left: 3rem;
+    margin-right: 10rem; */
     flex: 1;
 }
 
@@ -107,4 +109,27 @@ body {
 /* Show page */
 .btns {
     display: flex;
+}
+
+#filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+}
+
+.filter {
+    opacity: 0.7;
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 1rem;
+}
+
+.filter p {
+    font-size: 0.8rem;
+}
+
+.filter:hover {
+    opacity: 1;
+    cursor: pointer;
 }

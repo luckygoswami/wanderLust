@@ -52,7 +52,7 @@ const sessionOptions = {
 };
 
 app.get("/", (req, res) => {
-    res.send("root page");
+    res.redirect("/listings");
 });
 
 app.use(session(sessionOptions));

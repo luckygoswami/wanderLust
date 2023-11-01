@@ -1,6 +1,63 @@
 <% layout('/layouts/boilerplate.ejs') %>
 <body>
-    <h3 class="mt-2">All Listings</h3>
+    <div id="filters">
+        <div class="filter">
+            <div>
+                <i class="fa-solid fa-fire"></i>
+            </div>
+            <p>Trending</p>
+        </div>
+        <div class="filter">
+            <div>
+                <i class="fa-solid fa-bed"></i>
+            </div>
+            <p>Rooms</p>
+        </div>
+        <div class="filter">
+            <div>
+                <i class="fa-solid fa-mountain-city"></i>
+            </div>
+            <p>Iconic Cities</p>
+        </div>
+        <div class="filter">
+            <div>
+                <i class="fa-solid fa-mountain"></i>
+            </div>
+            <p>Mountains</p>
+        </div>
+        <div class="filter">
+            <div>
+                <i class="fa-brands fa-fort-awesome"></i>
+            </div>
+            <p>Castles</p>
+        </div>
+        <div class="filter">
+            <div>
+                <i class="fa-solid fa-person-swimming"></i>
+            </div>
+            <p>Pools</p>
+        </div>
+        <div class="filter">
+            <div>
+                <i class="fa-solid fa-campground"></i>
+            </div>
+            <p>Camping</p>
+        </div>
+        <div class="filter">
+            <div>
+                <i class="fa-solid fa-cow"></i>
+            </div>
+            <p>Farms</p>
+        </div>
+        <div class="filter">
+            <div>
+                <i class="fa-solid fa-snowflake"></i>
+            </div>
+            <p>Arctic</p>
+        </div>
+    </div>
+
+    <!-- <h3 class="mt-2">All Listings</h3> -->
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
         <% for (let listing of allListings) { %>
         <a href="/listings/<%= listing.id %>" class="card-link">
