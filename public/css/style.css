@@ -133,3 +133,24 @@ body {
     opacity: 1;
     cursor: pointer;
 }
+
+.search-btn {
+    border-radius: 25px;
+    background-color: #fe424d;
+    color: white;
+    /* padding: 0 1rem; */
+}
+.search-btn:hover {
+    border-radius: 25px;
+    background-color: #fe424d;
+    color: white;
+}
+.search-btn i {
+    display: inline;
+    margin-right: 0.5rem;
+}
+
+.search-inp {
+    border-radius: 25px;
+    padding: 0.5rem 3rem;
+}
