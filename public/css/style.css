@@ -1,157 +1,173 @@
 body {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .container {
-    /* margin-left: 3rem;
+  /* margin-left: 3rem;
     margin-right: 10rem; */
-    flex: 1;
+  flex: 1;
 }
 
 /* Navbar */
+.container-fluid {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+
+.blank-div {
+  background-color: bisque;
+  visibility: hidden;
+  margin-left: 15vw;
+  margin-right: 5rem;
+}
+
 .navbar {
-    height: 5rem;
-    background-color: white;
+  height: 5rem;
+  background-color: white;
 }
 
 .fa-compass {
-    color: #fe424d;
-    font-size: 2rem;
+  color: #fe424d;
+  font-size: 2rem;
 }
 
 .nav-link {
-    color: #222222;
+  color: #222222;
 }
 
 /* Footer */
 .f-info {
-    height: 8rem;
-    background-color: #ebebeb;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+  height: 8rem;
+  background-color: #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .f-info div {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .f-info-socials i {
-    font-size: 1.2rem;
-    margin-right: 1rem;
+  font-size: 1.2rem;
+  margin-right: 1rem;
 }
 
 .f-info-links a {
-    color: #222222;
-    text-decoration: none;
-    margin-right: 1rem;
+  color: #222222;
+  text-decoration: none;
+  margin-right: 1rem;
 }
 
 .f-info-links a:hover {
-    color: #222222;
-    text-decoration: underline;
+  color: #222222;
+  text-decoration: underline;
 }
 
 /* Cards */
 .listing-card {
-    border: none;
-    margin-bottom: 2rem;
+  border: none;
+  margin-bottom: 2rem;
 }
 
 .card-img-top {
-    border-radius: 1rem;
-    object-fit: cover;
-    height: 15rem;
-    width: auto;
-    /* width: 100%; */
+  border-radius: 1rem;
+  object-fit: cover;
+  height: 15rem;
+  width: auto;
+  /* width: 100%; */
 }
 
 .card-body {
-    padding: 0%;
+  padding: 0%;
 }
 
 .card-text {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .card-link {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* Overlay effect */
 .card-img-overlay {
-    opacity: 0;
+  opacity: 0;
 }
 
 .card-img-overlay:hover {
-    opacity: 0.2;
-    background-color: white;
+  opacity: 0.2;
+  background-color: white;
 }
 
 /* New page */
 .add-btn {
-    background-color: #fe424d;
-    border: none;
+  background-color: #fe424d;
+  border: none;
 }
 
 /* Edit page */
 .edit-btn {
-    background-color: #fe424d;
-    border: none;
+  background-color: #fe424d;
+  border: none;
 }
 
 /* Show page */
 .btns {
-    display: flex;
+  display: flex;
 }
 
 #filters {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    /* flex-wrap: wrap; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* flex-wrap: wrap; */
 }
 
 .filter {
-    opacity: 0.7;
-    text-align: center;
-    margin-right: 2rem;
-    margin-top: 1rem;
+  opacity: 0.7;
+  text-align: center;
+  margin-right: 2rem;
+  margin-top: 1rem;
 }
 
 .filter p {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 .filter:hover {
-    opacity: 1;
-    cursor: pointer;
+  opacity: 1;
+  cursor: pointer;
 }
 
 .search-btn {
-    border-radius: 25px;
-    background-color: #fe424d;
-    color: white;
-    /* padding: 0 1rem; */
+  border-radius: 25px;
+  background-color: #fe424d;
+  color: white;
+  /* padding: 0 1rem; */
 }
 .search-btn:hover {
-    border-radius: 25px;
-    background-color: #fe424d;
-    color: white;
+  border-radius: 25px;
+  background-color: #fe424d;
+  color: white;
 }
 .search-btn i {
-    display: inline;
-    margin-right: 0.5rem;
+  display: inline;
+  margin-right: 0.5rem;
 }
 
 .search-inp {
-    border-radius: 25px;
-    padding: 0.5rem 3rem;
+  border-radius: 25px;
+  padding: 0.5rem 3rem;
 }
